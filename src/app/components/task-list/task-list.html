@@ -1,0 +1,31 @@
+<app-task-form (add)="addTask($event)"></app-task-form>
+@if(tasks.length) {
+  <ul class="list-group">
+  @for (task of tasks; track task.id) {
+    <li class="list-group-item d-flex justify-content-between align-items-start flex-column flex-md-row mb-4">
+      <div class="form-check me-3">
+        <input
+          type="checkbox"
+          class="form-check-input"
+          [checked]="task.completed"
+          (change)="completeTask(task)"
+        />
+      </div>
+
+      <div class="flex-grow-1">
+        <strong [class.text-decoration-line-through]="task.completed">{{ task.title | uppercase}}</strong><br />
+        <em class="text-muted">{{ task.description | lowercase}}</em><br />
+        <small class="text-secondary">Fecha de creación: {{ task.date | date: 'dd/MM/yyyy' }}</small>
+      </div>
+
+      <button class="btn btn-sm btn-danger mt-2 mt-md-0" (click)="deleteTask(task)">
+        Eliminar
+      </button>
+    </li>
+  }
+</ul>
+} @else {
+<img src="not-task.svg" alt="No tasks" class="img-fluid mx-auto d-block mb-3 max-width-img"  />
+<p class="text-center">Aún no tienes tareas</p>
+}
+

@@ -1,0 +1,35 @@
+<form [formGroup]="taskForm" (ngSubmit)="onSubmit()" class="mb-4">
+  <div class="mb-3">
+    <input
+      type="text"
+      class="form-control"
+      formControlName="title"
+      placeholder="Título"
+    />
+    @if (taskForm.get('title')?.invalid && taskForm.get('title')?.touched) {
+      <div class="text-danger mt-1 small">
+        @if (taskForm.get('title')?.errors?.['required']) {
+          <div>Este campo es obligatorio</div>
+        }
+        @if (taskForm.get('title')?.errors?.['minlength']) {
+          <div>Debes escribir minimo 3 caracteres</div>
+        }
+      </div>
+    }
+  </div>
+
+  <div class="mb-3">
+    <textarea
+      class="form-control"
+      formControlName="description"
+      placeholder="Descripción"
+    ></textarea>
+    @if (taskForm.get('description')?.invalid && taskForm.get('description')?.touched) {
+      <div class="text-danger mt-1 small">Este campo es obligatorio</div>
+    }
+  </div>
+
+  <button type="submit" class="btn btn-primary" [disabled]="taskForm.invalid">
+    Agregar Tarea
+  </button>
+</form>

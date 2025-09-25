@@ -1,11 +1,9 @@
 import { Component, signal } from '@angular/core';
+import { TaskList } from './components/task-list/task-list';
 
 @Component({
   selector: 'app-root',
-  imports: [],
-  templateUrl: './app.html',
-  styleUrl: './app.css'
+  imports: [TaskList],
+  templateUrl: './app.html'
 })
-export class App {
-  protected readonly title = signal('notes-app');
-}
+export class App {}
