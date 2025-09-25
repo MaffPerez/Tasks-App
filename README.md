@@ -2,14 +2,20 @@
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.1.6.
 
-## Development server
+### Iniciar la Aplicación
 
-To start a local development server, run:
+La aplicación requiere que dos procesos se ejecuten de forma simultánea en dos terminales separadas: la **API simulada** y el **servidor de desarrollo de Angular**.
 
-```bash
-npm run start:json
-ng serve
-```
+1.  **Iniciar la API Simulada**
+    En una terminal, ejecuta el siguiente comando para iniciar `json-server`. Este servidor leerá el archivo `db.json` y servirá los datos en `http://localhost:3000`.
+    ```bash
+    npm run start:json
+    ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+2.  **Iniciar el Servidor de Angular**
+    En una **segunda terminal**, ejecuta el comando para iniciar el servidor de desarrollo de Angular.
+    ```bash
+    ng serve -o
+    ```
+    La opción `-o` abrirá automáticamente tu navegador en `http://localhost:4200/`, donde podrás ver la aplicación en funcionamiento.
 
