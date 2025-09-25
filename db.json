@@ -1,0 +1,18 @@
+{
+  "tasks": [
+    {
+      "id": "c627",
+      "title": "Ir a clase de tenis",
+      "description": "Llevar dos polos",
+      "date": "2025-09-25T00:15:35.836Z",
+      "completed": true
+    },
+    {
+      "id": "74ea",
+      "title": "Ir al supermercado",
+      "description": "Comprar 1kg de tomate",
+      "date": "2025-09-25T00:25:37.908Z",
+      "completed": false
+    }
+  ]
+}
